@@ -7,6 +7,7 @@ import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.network.AbstractClientPlayerEntity;
 import net.minecraft.client.render.VertexConsumerProvider;
 import net.minecraft.client.util.math.MatrixStack;
+import net.minecraft.text.LiteralText;
 import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
 import net.minecraft.util.math.Matrix4f;
@@ -77,7 +78,7 @@ public class IveSpoken implements ModInitializer {
 			builder.append(c);
 		}
 
-		return Text.literal(builder.toString())
+		return new LiteralText(builder.toString())
 					   .setStyle(content.getStyle().withColor(Formatting.GRAY));
 	}
 

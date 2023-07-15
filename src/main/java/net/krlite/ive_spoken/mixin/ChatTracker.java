@@ -8,23 +8,24 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
+import java.util.Arrays;
+
 @Mixin(ChatHud.class)
 public class ChatTracker {
 	@Inject(method = "addMessage(Lnet/minecraft/text/Text;I)V", at = @At("HEAD"))
 	private void addMessage(Text message, int messageId, CallbackInfo ci) {
-		TextContent textContent = message.getContent();
-		if (textContent instanceof TranslatableTextContent translatableTextContent) {
-			Object[] args = translatableTextContent.getArgs();
+		if (message instanceof TranslatableText translatableText) {
+			Object[] args = translatableText.getArgs();
 			if (args.length == 2) {
-				MutableText
-						prefix = (MutableText) args[0],
-						content = (MutableText) args[1];
+				LiteralText prefix = (LiteralText) args[0];
+				Object content = args[1];
 
 				HoverEvent hoverEvent = prefix.getStyle().getHoverEvent();
 				if (hoverEvent != null) {
 					HoverEvent.EntityContent entityContent = (HoverEvent.EntityContent) hoverEvent.getValue(hoverEvent.getAction());
 					if (entityContent != null) {
-						IveSpoken.add(entityContent.uuid, content);
+						if (content instanceof TranslatableText translatableContent) IveSpoken.add(entityContent.uuid, translatableContent);
+						if (content instanceof String stringContent) IveSpoken.add(entityContent.uuid, new LiteralText(stringContent));
 					}
 				}
 			}
