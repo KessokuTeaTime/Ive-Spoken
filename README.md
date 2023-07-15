@@ -2,13 +2,13 @@
 
 # I've Spoken
 
-**I've Spoken** pops a RPG-like dialog on top of one's name when he or she speaks, and lasts for about 5 seconds (configurable) before vanishing.
+**I've Spoken** pops a RPG-like dialog on top of one's name when he or she speaks, and lasts for about 5 seconds(configurable) before vanishing.
 
 It's just something like this:
 
 ![I've spoken.](artwork/content/Spoken.png)
 
-The content will be truncated if too long (configurable).
+The content will be truncated if too long(configurable).
 
 ## Configuration
 
