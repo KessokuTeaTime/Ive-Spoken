@@ -1,13 +1,15 @@
 {
   "required": true,
   "minVersion": "0.8",
-  "package": "net.krlite.modid.mixin",
+  "package": "net.krlite.ive_spoken.mixin",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
   ],
   "client": [
+	"ChatTracker",
+	"DialogRenderer"
   ],
   "injectors": {
-    "defaultRequire": 0
+	"defaultRequire": 0
   }
 }
