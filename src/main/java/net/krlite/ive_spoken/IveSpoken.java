@@ -94,7 +94,7 @@ public class IveSpoken implements ModInitializer {
 		int y = (player.getName().getString().equals("deadmau5") ? -10 : 0) - 10;
 
 		matrixStack.push();
-		matrixStack.translate(0, player.getNameLabelHeight(), 0);
+		matrixStack.translate(0, player.getHeight() + 0.5F, 0);
 		matrixStack.multiply(MinecraftClient.getInstance().getEntityRenderDispatcher().getRotation());
 		matrixStack.scale(-0.025F, -0.025F, 0.025F);
 		Matrix4f matrix4f = matrixStack.peek().getPositionMatrix();
