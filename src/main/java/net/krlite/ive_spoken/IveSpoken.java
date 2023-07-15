@@ -1,13 +1,17 @@
 package net.krlite.ive_spoken;
 
 import com.google.common.collect.ImmutableMap;
+import com.mojang.blaze3d.systems.RenderSystem;
 import net.fabricmc.api.ModInitializer;
+import net.krlite.ive_spoken.config.IveSpokenConfig;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.font.TextRenderer;
 import net.minecraft.client.network.AbstractClientPlayerEntity;
 import net.minecraft.client.render.VertexConsumerProvider;
 import net.minecraft.client.util.math.MatrixStack;
+import net.minecraft.text.MutableText;
 import net.minecraft.text.Text;
+import net.minecraft.util.Formatting;
 import org.jetbrains.annotations.Nullable;
 import org.joml.Matrix4f;
 import org.slf4j.Logger;
@@ -22,10 +26,12 @@ public class IveSpoken implements ModInitializer {
 	public static final String NAME = "I've Spoken", ID = "ive-spoken";
 	public static final Logger LOGGER = LoggerFactory.getLogger(ID);
 
+	public static final IveSpokenConfig CONFIG = new IveSpokenConfig();
 	private static final HashMap<UUID, StampedMessage> dialogs = new HashMap<>();
 
 	@Override
 	public void onInitialize() {
+		CONFIG.save();
 	}
 
 	public static ImmutableMap<UUID, StampedMessage> dialogs() {
@@ -49,11 +55,35 @@ public class IveSpoken implements ModInitializer {
 		return dialogs().get(uuid);
 	}
 
+	public static long timestamp(UUID uuid) {
+		@Nullable StampedMessage message = message(uuid);
+		if (message == null) return 0;
+
+		return message.timestamp();
+	}
+
 	public static @Nullable Text dialog(UUID uuid) {
 		@Nullable StampedMessage message = message(uuid);
 		if (message == null) return null;
 
-		return message.message();
+		Text content = message.message();
+		StringBuilder builder = new StringBuilder();
+
+		for (int width = 0, index = 0; index < content.getString().length(); index++) {
+			char c = content.getString().charAt(index);
+			int charWidth = MinecraftClient.getInstance().textRenderer.getWidth(String.valueOf(c));
+
+			if (width + charWidth > CONFIG.maxWidth()) {
+				builder.append("...");
+				break;
+			}
+
+			width += charWidth;
+			builder.append(c);
+		}
+
+		return Text.literal(builder.toString())
+					   .setStyle(content.getStyle().withColor(Formatting.GRAY));
 	}
 
 	public static void renderDialog(AbstractClientPlayerEntity player, MatrixStack matrixStack, VertexConsumerProvider vertexConsumers, int light) {
@@ -69,17 +99,18 @@ public class IveSpoken implements ModInitializer {
 		matrixStack.scale(-0.025F, -0.025F, 0.025F);
 		Matrix4f matrix4f = matrixStack.peek().getPositionMatrix();
 
-		int color = (int) (MinecraftClient.getInstance().options.getTextBackgroundOpacity(0.25F) * 255.0F) << 24;
+		int backgroundColor = (int) (MinecraftClient.getInstance().options.getTextBackgroundOpacity(0.25F) * 255.0F) << 24;
 		float x = (float) -MinecraftClient.getInstance().textRenderer.getWidth(dialog) / 2;
+
 		MinecraftClient.getInstance().textRenderer.draw(
-				dialog, x, y - 10, 0x20FFFFFF, false, matrix4f, vertexConsumers,
+				dialog, x, y, 0x20FFFFFF, false, matrix4f, vertexConsumers,
 				sneaky ? TextRenderer.TextLayerType.SEE_THROUGH : TextRenderer.TextLayerType.NORMAL,
-				color, light
+				backgroundColor, light
 		);
 
 		if (sneaky) {
 			MinecraftClient.getInstance().textRenderer.draw(
-					dialog, x, y - 10, 0xFFFFFFFF, false, matrix4f, vertexConsumers,
+					dialog, x, y, 0xFFFFFFFF, false, matrix4f, vertexConsumers,
 					TextRenderer.TextLayerType.NORMAL,
 					0, light
 			);
