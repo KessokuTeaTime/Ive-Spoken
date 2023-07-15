@@ -104,15 +104,13 @@ public class IveSpoken implements ModInitializer {
 
 		MinecraftClient.getInstance().textRenderer.draw(
 				dialog, x, y, 0x20FFFFFF, false, matrix4f, vertexConsumers,
-				sneaky ? TextRenderer.TextLayerType.SEE_THROUGH : TextRenderer.TextLayerType.NORMAL,
-				backgroundColor, light
+				sneaky, backgroundColor, light
 		);
 
 		if (sneaky) {
 			MinecraftClient.getInstance().textRenderer.draw(
 					dialog, x, y, 0xFFFFFFFF, false, matrix4f, vertexConsumers,
-					TextRenderer.TextLayerType.NORMAL,
-					0, light
+					false, 0, light
 			);
 		}
 
