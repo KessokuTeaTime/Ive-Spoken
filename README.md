@@ -1,7 +1,3 @@
-### <p align=right>[`→` Modrinth](https://modrinth.com/mod/ive-spoken)</p>
+### <p align=right>[Main Branch `←`](https://github.com/KrLite/Ive-Spoken)&emsp;[`→` Modrinth](https://modrinth.com/mod/ive-spoken)</p>
 
-# I've Spoken
-
-## License
-
-This repository is available under the **[GNU Public License.](LICENSE)**
+# I've Spoken for `1.19.3`
