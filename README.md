@@ -6,7 +6,7 @@
 
 It's just something like this:
 
-![I've spoken.](artwork/content/Spoken.png)
+![I've spoken.](https://github.com/KrLite/Ive-Spoken/blob/artwork/content/Spoken.png)
 
 The content will be truncated if too long(configurable).
 
