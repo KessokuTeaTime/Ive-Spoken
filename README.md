@@ -16,4 +16,4 @@ You can now configure **I've Spoken** by editing the configuration file at `/con
 
 ## License
 
-**I've Spoken** is available under the **[GNU Public License.](LICENSE)**
+**I've Spoken** is licensed under the **[GNU General Public License v3.](LICENSE)**
