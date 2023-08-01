@@ -15,11 +15,10 @@ public class ChatTracker {
 		TextContent textContent = message.getContent();
 		if (textContent instanceof TranslatableTextContent translatableTextContent) {
 			Object[] args = translatableTextContent.getArgs();
-			if (args.length == 2) {
-				MutableText
-						prefix = (MutableText) args[0],
-						content = (MutableText) args[1];
-
+			if (args.length == 2
+						&& args[0] instanceof MutableText prefix
+						&& args[1] instanceof MutableText content
+			) {
 				HoverEvent hoverEvent = prefix.getStyle().getHoverEvent();
 				if (hoverEvent != null) {
 					HoverEvent.EntityContent entityContent = (HoverEvent.EntityContent) hoverEvent.getValue(hoverEvent.getAction());
