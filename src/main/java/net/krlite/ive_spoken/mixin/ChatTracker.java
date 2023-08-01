@@ -16,8 +16,10 @@ public class ChatTracker {
 	private void addMessage(Text message, int messageId, CallbackInfo ci) {
 		if (message instanceof TranslatableText translatableText) {
 			Object[] args = translatableText.getArgs();
-			if (args.length == 2) {
-				LiteralText prefix = (LiteralText) args[0];
+			if (args.length == 2
+						&& args[0] instanceof LiteralText prefix
+						&& args[1] != null
+			) {
 				Object content = args[1];
 
 				HoverEvent hoverEvent = prefix.getStyle().getHoverEvent();
