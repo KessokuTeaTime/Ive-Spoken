@@ -12,6 +12,7 @@ import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.text.MutableText;
 import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
+import net.minecraft.util.Identifier;
 import org.jetbrains.annotations.Nullable;
 import org.joml.Matrix4f;
 import org.slf4j.Logger;
@@ -36,6 +37,10 @@ public class IveSpoken implements ModInitializer {
 
 	public static ImmutableMap<UUID, StampedMessage> dialogs() {
 		return ImmutableMap.copyOf(dialogs);
+	}
+
+	public static MutableText translatable(String category, String... paths) {
+		return Text.translatable(category + "." + ID + "." + String.join(".", paths));
 	}
 
 	public static void add(UUID uuid, Text message) {

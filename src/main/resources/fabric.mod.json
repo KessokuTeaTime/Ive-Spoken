@@ -20,6 +20,9 @@
   "entrypoints": {
     "main": [
       "net.krlite.ive_spoken.IveSpoken"
+    ],
+    "modmenu": [
+      "net.krlite.ive_spoken.config.modmenu.IveSpokenModMenuImpl"
     ]
   },
   "mixins": [
@@ -27,9 +30,9 @@
   ],
 
   "depends": {
-    "fabricloader": ">=0.14.21",
+    "fabricloader": "*",
     "fabric-api": "*",
-    "minecraft": ["~1.20", "~1.20.1"]
+    "minecraft": "1.20.x"
   },
   "suggests": {
   }
