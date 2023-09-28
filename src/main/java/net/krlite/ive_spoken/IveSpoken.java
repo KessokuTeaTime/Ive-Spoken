@@ -24,7 +24,7 @@ import java.util.Iterator;
 import java.util.UUID;
 
 public class IveSpoken implements ModInitializer {
-	public static final String NAME = "I've Spoken", ID = "ive-spoken";
+	public static final String NAME = "I've Spoken", ID = "ive_spoken";
 	public static final Logger LOGGER = LoggerFactory.getLogger(ID);
 
 	public static final IveSpokenConfig CONFIG = new IveSpokenConfig();
