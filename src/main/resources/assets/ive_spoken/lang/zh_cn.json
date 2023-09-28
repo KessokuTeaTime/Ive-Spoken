@@ -1,6 +1,6 @@
 {
   "screen.ive_spoken.config": "I've Spoken",
 
-  "config.ive_spoken.lasting_time": "对话框显示时间（毫秒）",
-  "config.ive_spoken.max_width": "对话框最大宽度（像素）"
+  "config.ive_spoken.general.lasting_time": "对话框显示时间（毫秒）",
+  "config.ive_spoken.general.max_width": "对话框最大宽度（像素）"
 }

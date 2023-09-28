@@ -1,6 +1,6 @@
 {
   "screen.ive_spoken.config": "I've Spoken",
 
-  "config.ive_spoken.lasting_time": "Dialog Lasting Time (ms)",
-  "config.ive_spoken.max_width": "Max Dialog Width (pixels)"
+  "config.ive_spoken.general.lasting_time": "Dialog Lasting Time (ms)",
+  "config.ive_spoken.general.max_width": "Max Dialog Width (pixels)"
 }
