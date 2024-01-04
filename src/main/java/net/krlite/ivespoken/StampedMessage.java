@@ -1,4 +1,4 @@
-package net.krlite.ive_spoken;
+package net.krlite.ivespoken;
 
 import net.minecraft.text.Text;
 

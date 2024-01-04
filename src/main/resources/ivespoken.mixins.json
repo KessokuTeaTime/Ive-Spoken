@@ -1,7 +1,7 @@
 {
   "required": true,
   "minVersion": "0.8",
-  "package": "net.krlite.ive_spoken.mixin",
+  "package": "net.krlite.ivespoken.mixin",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
   ],

@@ -1,32 +1,32 @@
 {
   "schemaVersion": 1,
-  "id": "ive_spoken",
+  "id": "ivespoken",
   "version": "${version}",
 
   "name": "I've Spoken",
-  "description": "Displays RPG-Like Dialogs Beyond Players' Names. I've Spoken.",
+  "description": "Displays RPG-like dialogs above players' names. I've spoken.",
   "authors": [
     "KrLite"
   ],
   "contact": {
     "homepage": "https://github.com/KrLite",
-    "sources": "https://github.com/KrLite/Ive-Spoken"
+    "sources": "https://github.com/KrLite/Mod.Ive-Spoken"
   },
 
   "license": "GPL-3.0",
-  "icon": "assets/ive_spoken/icon.png",
+  "icon": "assets/ivespoken/icon.png",
 
   "environment": "client",
   "entrypoints": {
     "main": [
-      "net.krlite.ive_spoken.IveSpoken"
+      "net.krlite.ivespoken.IveSpoken"
     ],
     "modmenu": [
-      "net.krlite.ive_spoken.config.modmenu.IveSpokenModMenuImpl"
+      "net.krlite.ivespoken.config.modmenu.IveSpokenModMenuImpl"
     ]
   },
   "mixins": [
-	"ive_spoken.mixins.json"
+	"ivespoken.mixins.json"
   ],
 
   "depends": {

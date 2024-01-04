@@ -1,9 +1,9 @@
-package net.krlite.ive_spoken;
+package net.krlite.ivespoken;
 
 import com.google.common.collect.ImmutableMap;
 import com.mojang.blaze3d.systems.RenderSystem;
 import net.fabricmc.api.ModInitializer;
-import net.krlite.ive_spoken.config.IveSpokenConfig;
+import net.krlite.ivespoken.config.IveSpokenConfig;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.font.TextRenderer;
 import net.minecraft.client.network.AbstractClientPlayerEntity;
@@ -24,7 +24,7 @@ import java.util.Iterator;
 import java.util.UUID;
 
 public class IveSpoken implements ModInitializer {
-	public static final String NAME = "I've Spoken", ID = "ive_spoken";
+	public static final String NAME = "I've Spoken", ID = "ivespoken";
 	public static final Logger LOGGER = LoggerFactory.getLogger(ID);
 
 	public static final IveSpokenConfig CONFIG = new IveSpokenConfig();

@@ -12,7 +12,7 @@ The content will be truncated if too long (configurable).
 
 ## Configuration
 
-You can now configure **I've Spoken** by editing the configuration file at `/config/ive_spoken.toml`. You shall restart the game in order to reload the configurations.
+You can now configure **I've Spoken** by editing the configuration file at `/config/ivespoken.toml`. You shall restart the game in order to reload the configurations.
 
 ## License
 

@@ -1,13 +1,14 @@
-package net.krlite.ive_spoken.config;
+package net.krlite.ivespoken.config;
 
 import net.fabricmc.loader.api.FabricLoader;
+import net.krlite.ivespoken.IveSpoken;
 import net.krlite.pierced.annotation.Silent;
 import net.krlite.pierced.config.Pierced;
 
 import java.io.File;
 
 public class IveSpokenConfig extends Pierced {
-	private static final @Silent File file = FabricLoader.getInstance().getConfigDir().resolve("ive_spoken.toml").toFile();
+	private static final @Silent File file = FabricLoader.getInstance().getConfigDir().resolve(IveSpoken.ID + ".toml").toFile();
 
 	public IveSpokenConfig() {
 		super(IveSpokenConfig.class, file);

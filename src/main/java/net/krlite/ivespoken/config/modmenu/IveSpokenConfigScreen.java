@@ -1,9 +1,9 @@
-package net.krlite.ive_spoken.config.modmenu;
+package net.krlite.ivespoken.config.modmenu;
 
 import me.shedaniel.clothconfig2.api.ConfigBuilder;
 import me.shedaniel.clothconfig2.api.ConfigCategory;
 import me.shedaniel.clothconfig2.api.ConfigEntryBuilder;
-import net.krlite.ive_spoken.IveSpoken;
+import net.krlite.ivespoken.IveSpoken;
 import net.minecraft.client.gui.screen.Screen;
 
 public class IveSpokenConfigScreen {

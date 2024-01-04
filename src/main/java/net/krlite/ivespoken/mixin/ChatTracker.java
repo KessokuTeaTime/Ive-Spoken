@@ -1,6 +1,6 @@
-package net.krlite.ive_spoken.mixin;
+package net.krlite.ivespoken.mixin;
 
-import net.krlite.ive_spoken.IveSpoken;
+import net.krlite.ivespoken.IveSpoken;
 import net.minecraft.client.gui.hud.ChatHud;
 import net.minecraft.client.gui.hud.MessageIndicator;
 import net.minecraft.network.message.MessageSignatureData;

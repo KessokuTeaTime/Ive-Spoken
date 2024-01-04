@@ -1,4 +1,4 @@
-package net.krlite.ive_spoken.config.modmenu;
+package net.krlite.ivespoken.config.modmenu;
 
 import com.terraformersmc.modmenu.api.ConfigScreenFactory;
 import com.terraformersmc.modmenu.api.ModMenuApi;
