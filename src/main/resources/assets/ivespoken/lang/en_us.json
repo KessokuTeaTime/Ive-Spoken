@@ -2,5 +2,5 @@
   "screen.ivespoken.config": "I've Spoken",
 
   "config.ivespoken.general.lasting_time": "Dialog Lasting Time (ms)",
-  "config.ivespoken.general.max_width": "Max Dialog Width (pixels)"
+  "config.ivespoken.general.max_width"   : "Max Dialog Width (pixels)"
 }
