@@ -19,11 +19,11 @@
 
   "environment": "client",
   "entrypoints": {
-    "main": [
+    "client": [
       "net.krlite.ivespoken.IveSpoken"
     ],
     "modmenu": [
-      "net.krlite.ivespoken.config.modmenu.IveSpokenModMenuImpl"
+      "net.krlite.ivespoken.config.IveSpokenModMenuIntegration"
     ]
   },
   "mixins": [

@@ -1,6 +1,7 @@
 {
-  "screen.ivespoken.config": "I've Spoken",
+  "text.autoconfig.ivespoken.title": "I've Spoken",
 
-  "config.ivespoken.general.lasting_time": "Dialog Lasting Time (ms)",
-  "config.ivespoken.general.max_width"   : "Max Dialog Width (pixels)"
+  "text.autoconfig.ivespoken.option.enabled"    : "Show Dialogs",
+  "text.autoconfig.ivespoken.option.lastingTime": "Dialog Lasting Time (ms)",
+  "text.autoconfig.ivespoken.option.maxWidth"   : "Max Dialog Width (pixel)"
 }

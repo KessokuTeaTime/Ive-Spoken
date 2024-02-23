@@ -4,6 +4,6 @@ import net.minecraft.text.Text;
 
 public record StampedMessage(long timestamp, Text message) {
 	public boolean expired() {
-		return System.currentTimeMillis() - timestamp() >= IveSpoken.CONFIG.lastingTime();
+		return System.currentTimeMillis() - timestamp() >= IveSpoken.CONFIG.lastingTime;
 	}
 }

@@ -2,8 +2,9 @@
   "modmenu.nameTranslation.ivespoken"       : "I've Spoken",
   "modmenu.descriptionTranslation.ivespoken": "在玩家说话时于其名称上方显示RPG样式的对话框。说到即做到（源自美剧《曼达洛人》的双关语）。",
 
-  "screen.ivespoken.config": "I've Spoken",
+  "text.autoconfig.ivespoken.title": "I've Spoken",
 
-  "config.ivespoken.general.lasting_time": "对话框显示时间（毫秒）",
-  "config.ivespoken.general.max_width"   : "对话框最大宽度（像素）"
+  "text.autoconfig.ivespoken.option.enabled"    : "显示对话框",
+  "text.autoconfig.ivespoken.option.lastingTime": "对话框显示时间（毫秒）",
+  "text.autoconfig.ivespoken.option.maxWidth"   : "对话框最大宽度（像素）"
 }

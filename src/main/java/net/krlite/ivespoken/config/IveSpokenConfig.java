@@ -1,39 +1,16 @@
 package net.krlite.ivespoken.config;
 
-import net.fabricmc.loader.api.FabricLoader;
-import net.krlite.ivespoken.IveSpoken;
-import net.krlite.pierced.annotation.Silent;
-import net.krlite.pierced.config.Pierced;
+import me.shedaniel.autoconfig.ConfigData;
+import me.shedaniel.autoconfig.annotation.Config;
+import me.shedaniel.autoconfig.annotation.ConfigEntry;
 
-import java.io.File;
+@Config(name = "ivespoken")
+public class IveSpokenConfig implements ConfigData {
+	public boolean enabled = true;
 
-public class IveSpokenConfig extends Pierced {
-	private static final @Silent File file = FabricLoader.getInstance().getConfigDir().resolve(IveSpoken.ID + ".toml").toFile();
+	@ConfigEntry.BoundedDiscrete(max = 1000 * 60)
+	public long lastingTime = 1000 * 5;
 
-	public IveSpokenConfig() {
-		super(IveSpokenConfig.class, file);
-		load();
-	}
-
-	private long lastingTime = 1000 * 5;
-
-	public long lastingTime() {
-		return lastingTime;
-	}
-
-	public void lastingTime(long time) {
-		lastingTime = time;
-		save();
-	}
-
-	private int maxWidth = 180;
-
-	public int maxWidth() {
-		return maxWidth;
-	}
-
-	public void maxWidth(int width) {
-		maxWidth = width;
-		save();
-	}
+	@ConfigEntry.BoundedDiscrete(max = 1000)
+	public int maxWidth = 180;
 }

@@ -1,8 +1,9 @@
 package net.krlite.ivespoken;
 
 import com.google.common.collect.ImmutableMap;
-import com.mojang.blaze3d.systems.RenderSystem;
-import net.fabricmc.api.ModInitializer;
+import me.shedaniel.autoconfig.AutoConfig;
+import me.shedaniel.autoconfig.serializer.Toml4jConfigSerializer;
+import net.fabricmc.api.ClientModInitializer;
 import net.krlite.ivespoken.config.IveSpokenConfig;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.font.TextRenderer;
@@ -12,27 +13,28 @@ import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.text.MutableText;
 import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
-import net.minecraft.util.Identifier;
 import org.jetbrains.annotations.Nullable;
 import org.joml.Matrix4f;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.UUID;
 
-public class IveSpoken implements ModInitializer {
+public class IveSpoken implements ClientModInitializer {
 	public static final String NAME = "I've Spoken", ID = "ivespoken";
 	public static final Logger LOGGER = LoggerFactory.getLogger(ID);
 
-	public static final IveSpokenConfig CONFIG = new IveSpokenConfig();
+	public static final IveSpokenConfig CONFIG;
 	private static final HashMap<UUID, StampedMessage> dialogs = new HashMap<>();
 
+	static {
+		AutoConfig.register(IveSpokenConfig.class, Toml4jConfigSerializer::new);
+		CONFIG = AutoConfig.getConfigHolder(IveSpokenConfig.class).get();
+	}
+
 	@Override
-	public void onInitialize() {
-		CONFIG.save();
+	public void onInitializeClient() {
 	}
 
 	public static ImmutableMap<UUID, StampedMessage> dialogs() {
@@ -78,7 +80,7 @@ public class IveSpoken implements ModInitializer {
 			char c = content.getString().charAt(index);
 			int charWidth = MinecraftClient.getInstance().textRenderer.getWidth(String.valueOf(c));
 
-			if (width + charWidth > CONFIG.maxWidth()) {
+			if (width + charWidth > CONFIG.maxWidth) {
 				builder.append("...");
 				break;
 			}
