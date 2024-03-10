@@ -22,7 +22,7 @@ public abstract class DialogRenderer extends EntityRenderer<Entity> {
 
 	@Inject(method = "renderLabelIfPresent*", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/util/math/MatrixStack;pop()V"))
 	private void renderDialog(AbstractClientPlayerEntity player, Text text, MatrixStack matrixStack, VertexConsumerProvider vertexConsumers, int light, CallbackInfo ci) {
-		if (!IveSpoken.CONFIG.enabled) return;
+		if (!IveSpoken.CONFIG.get().enabled) return;
 
 		double distance = this.dispatcher.getSquaredDistanceToCamera(player);
 		if (distance > 4096) return;

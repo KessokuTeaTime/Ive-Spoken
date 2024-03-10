@@ -2,6 +2,7 @@ package net.krlite.ivespoken;
 
 import com.google.common.collect.ImmutableMap;
 import me.shedaniel.autoconfig.AutoConfig;
+import me.shedaniel.autoconfig.ConfigHolder;
 import me.shedaniel.autoconfig.serializer.Toml4jConfigSerializer;
 import net.fabricmc.api.ClientModInitializer;
 import net.krlite.ivespoken.config.IveSpokenConfig;
@@ -25,12 +26,12 @@ public class IveSpoken implements ClientModInitializer {
 	public static final String NAME = "I've Spoken", ID = "ivespoken";
 	public static final Logger LOGGER = LoggerFactory.getLogger(ID);
 
-	public static final IveSpokenConfig CONFIG;
+	public static final ConfigHolder<IveSpokenConfig> CONFIG;
 	private static final HashMap<UUID, StampedMessage> dialogs = new HashMap<>();
 
 	static {
 		AutoConfig.register(IveSpokenConfig.class, Toml4jConfigSerializer::new);
-		CONFIG = AutoConfig.getConfigHolder(IveSpokenConfig.class).get();
+		CONFIG = AutoConfig.getConfigHolder(IveSpokenConfig.class);
 	}
 
 	@Override
@@ -80,7 +81,7 @@ public class IveSpoken implements ClientModInitializer {
 			char c = content.getString().charAt(index);
 			int charWidth = MinecraftClient.getInstance().textRenderer.getWidth(String.valueOf(c));
 
-			if (width + charWidth > CONFIG.maxWidth) {
+			if (width + charWidth > CONFIG.get().maxWidth) {
 				builder.append("...");
 				break;
 			}
