@@ -12,8 +12,12 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(ChatHud.class)
 public class ChatTracker {
-	@Inject(method = "addMessage(Lnet/minecraft/text/Text;Lnet/minecraft/network/message/MessageSignatureData;Lnet/minecraft/client/gui/hud/MessageIndicator;)V", at = @At("HEAD"))
+	@Inject(
+			method = "addMessage(Lnet/minecraft/text/Text;Lnet/minecraft/network/message/MessageSignatureData;Lnet/minecraft/client/gui/hud/MessageIndicator;)V",
+			at = @At("HEAD")
+	)
 	private void addMessage(Text message, MessageSignatureData signature, MessageIndicator indicator, CallbackInfo ci) {
+		IveSpoken.LOGGER.info("Message received: {}", message);
 		TextContent textContent = message.getContent();
 		if (textContent instanceof TranslatableTextContent translatableTextContent) {
 			Object[] args = translatableTextContent.getArgs();
