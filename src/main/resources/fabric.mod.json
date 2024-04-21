@@ -3,15 +3,16 @@
   "id": "ivespoken",
   "version": "${version}",
 
-  "name": "I've Spoken",
+  "name": "${display.name}",
   "description": "Displays RPG-like dialogs above players' names. I've spoken.",
   "authors": [
+    "Kessoku Tea Time",
     "KrLite"
   ],
   "contact": {
     "homepage": "https://modrinth.com/mod/ive-spoken",
-    "sources": "https://github.com/KrLite/Mod.Ive-Spoken",
-    "issues": "https://github.com/KrLite/Mod.Ive-Spoken/issues"
+    "sources": "https://github.com/KessokuTeaTime/Ive-Spoken",
+    "issues": "https://github.com/KessokuTeaTime/Ive-Spoken/issues"
   },
 
   "license": "GPL-3.0",
@@ -20,10 +21,10 @@
   "environment": "client",
   "entrypoints": {
     "client": [
-      "net.krlite.ivespoken.IveSpoken"
+      "band.kessokuteatime.ivespoken.IveSpoken"
     ],
     "modmenu": [
-      "net.krlite.ivespoken.config.IveSpokenModMenuIntegration"
+      "band.kessokuteatime.ivespoken.config.IveSpokenModMenuIntegration"
     ]
   },
   "mixins": [

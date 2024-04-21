@@ -1,12 +1,12 @@
-### <p align=right>[`→` Modrinth](https://modrinth.com/mod/ive-spoken)</p>
+### <p align=right>[`→` CurseForge](https://www.curseforge.com/minecraft/mc-mods/ive-spoken)&ensp;[`→` Modrinth](https://modrinth.com/mod/ive-spoken)</p>
 
 # I've Spoken
 
-**I've Spoken** pops a RPG-like dialog on top of one's name when he or she speaks, and lasts for about 5 seconds before vanishing (configurable).
+**I've Spoken** pops an RPG-like dialog on top of one's name when he or she speaks, and lasts for about 5 seconds before vanishing (configurable).
 
 It's just something like this:
 
-![I've spoken.](https://github.com/KrLite/Mod.Ive-Spoken/blob/artwork/content/spoken.png)
+![I've spoken.](https://github.com/KessokuTeaTime/Ive-Spoken/blob/artwork/content/spoken.png)
 
 The content will be truncated if too long (configurable).
 

@@ -1,4 +1,4 @@
-package net.krlite.ivespoken;
+package band.kessokuteatime.ivespoken;
 
 import net.minecraft.text.Text;
 

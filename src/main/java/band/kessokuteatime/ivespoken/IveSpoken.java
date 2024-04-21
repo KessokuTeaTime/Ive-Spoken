@@ -1,11 +1,11 @@
-package net.krlite.ivespoken;
+package band.kessokuteatime.ivespoken;
 
 import com.google.common.collect.ImmutableMap;
 import me.shedaniel.autoconfig.AutoConfig;
 import me.shedaniel.autoconfig.ConfigHolder;
 import me.shedaniel.autoconfig.serializer.Toml4jConfigSerializer;
 import net.fabricmc.api.ClientModInitializer;
-import net.krlite.ivespoken.config.IveSpokenConfig;
+import band.kessokuteatime.ivespoken.config.IveSpokenConfig;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.font.TextRenderer;
 import net.minecraft.client.network.AbstractClientPlayerEntity;

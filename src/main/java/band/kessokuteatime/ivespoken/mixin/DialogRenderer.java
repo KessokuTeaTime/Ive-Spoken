@@ -1,6 +1,6 @@
-package net.krlite.ivespoken.mixin;
+package band.kessokuteatime.ivespoken.mixin;
 
-import net.krlite.ivespoken.IveSpoken;
+import band.kessokuteatime.ivespoken.IveSpoken;
 import net.minecraft.client.network.AbstractClientPlayerEntity;
 import net.minecraft.client.render.VertexConsumerProvider;
 import net.minecraft.client.render.entity.EntityRenderer;

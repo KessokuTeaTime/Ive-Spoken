@@ -1,4 +1,4 @@
-package net.krlite.ivespoken.config;
+package band.kessokuteatime.ivespoken.config;
 
 import me.shedaniel.autoconfig.ConfigData;
 import me.shedaniel.autoconfig.annotation.Config;

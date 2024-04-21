@@ -1,6 +1,6 @@
-package net.krlite.ivespoken.mixin;
+package band.kessokuteatime.ivespoken.mixin;
 
-import net.krlite.ivespoken.IveSpoken;
+import band.kessokuteatime.ivespoken.IveSpoken;
 import net.minecraft.client.gui.hud.ChatHud;
 import net.minecraft.client.gui.hud.MessageIndicator;
 import net.minecraft.network.message.MessageSignatureData;
