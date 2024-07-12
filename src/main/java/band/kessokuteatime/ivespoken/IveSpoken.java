@@ -4,7 +4,6 @@ import band.kessokuteatime.nightautoconfig.config.base.ConfigType;
 import com.google.common.collect.ImmutableMap;
 import me.shedaniel.autoconfig.AutoConfig;
 import me.shedaniel.autoconfig.ConfigHolder;
-import me.shedaniel.autoconfig.serializer.Toml4jConfigSerializer;
 import net.fabricmc.api.ClientModInitializer;
 import band.kessokuteatime.ivespoken.config.IveSpokenConfig;
 import net.minecraft.client.MinecraftClient;

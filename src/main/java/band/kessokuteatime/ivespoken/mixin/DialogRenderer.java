@@ -30,7 +30,7 @@ public abstract class DialogRenderer extends EntityRenderer<Entity> {
 					shift = At.Shift.BEFORE
 			)
 	)
-	private void renderDialog(AbstractClientPlayerEntity player, Text text, MatrixStack matrixStack, VertexConsumerProvider vertexConsumers, int light, float tickDelta, CallbackInfo ci) {
+	private void renderDialog(AbstractClientPlayerEntity player, Text text, MatrixStack matrixStack, VertexConsumerProvider vertexConsumers, int light, CallbackInfo ci) {
 		if (!IveSpoken.CONFIG.get().enabled) return;
 
 		@Nullable Text dialog = IveSpoken.dialog(player.getUuid());
@@ -41,6 +41,6 @@ public abstract class DialogRenderer extends EntityRenderer<Entity> {
 
 		matrixStack.translate(0.0F, 9.0F * 1.15F * 0.025F, 0.0F);
 
-		super.renderLabelIfPresent(player, dialog, matrixStack, vertexConsumers, light, tickDelta);
+		super.renderLabelIfPresent(player, dialog, matrixStack, vertexConsumers, light);
 	}
 }

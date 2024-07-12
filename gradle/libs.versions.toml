@@ -4,16 +4,16 @@ archives-name = "ivespoken"
 mod = "2.2.0"
 loader = "fabric"
 
-minecraft = "1.21"
-yarn = "1.21+build.9"
+minecraft = "1.20"
+yarn = "1.20+build.1"
 fabric-loader = "0.16.0"
-fabric-api = "0.100.6+1.21"
+fabric-api = "0.83.0+1.20"
 fabric-loom = "1.6-SNAPSHOT"
 modpublisher = "2.1.0"
 
-cloth-config = "15.0.127"
-modmenu = "11.0.1"
-night-auto-config = "1.0.3-fabric1.21"
+cloth-config = "11.1.118"
+modmenu = "7.0.1"
+night-auto-config = "1.0.3-fabric1.20"
 
 # id
 id-modrinth = "OidSa416"
