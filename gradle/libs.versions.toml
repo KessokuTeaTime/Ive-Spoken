@@ -1,7 +1,7 @@
 [versions]
 maven-group = "band.kessokuteatime"
 archives-name = "ivespoken"
-mod = "2.1.0"
+mod = "2.2.0"
 loader = "fabric"
 
 minecraft = "1.21"
@@ -22,7 +22,7 @@ id-curseforge = "998412"
 # display
 display-name = "I've Spoken"
 display-loader = "Fabric"
-display-version = "1.20.x"
+display-version = "1.21+"
 
 [libraries]
 minecraft = { group = "com.mojang", name = "minecraft", version.ref = "minecraft" }

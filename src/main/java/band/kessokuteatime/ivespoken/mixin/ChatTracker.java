@@ -1,6 +1,7 @@
 package band.kessokuteatime.ivespoken.mixin;
 
 import band.kessokuteatime.ivespoken.IveSpoken;
+import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.client.gui.hud.ChatHud;
 import net.minecraft.client.gui.hud.MessageIndicator;
 import net.minecraft.network.message.MessageSignatureData;
@@ -17,7 +18,10 @@ public class ChatTracker {
 			at = @At("HEAD")
 	)
 	private void addMessage(Text message, MessageSignatureData signature, MessageIndicator indicator, CallbackInfo ci) {
-		IveSpoken.LOGGER.info("Message received: {}", message);
+		if (FabricLoader.getInstance().isDevelopmentEnvironment()) {
+			IveSpoken.LOGGER.info("Message received: {}", message);
+		}
+
 		TextContent textContent = message.getContent();
 		if (textContent instanceof TranslatableTextContent translatableTextContent) {
 			Object[] args = translatableTextContent.getArgs();
