@@ -11,9 +11,11 @@ import net.minecraft.client.font.TextRenderer;
 import net.minecraft.client.network.AbstractClientPlayerEntity;
 import net.minecraft.client.render.VertexConsumerProvider;
 import net.minecraft.client.util.math.MatrixStack;
+import net.minecraft.entity.EntityAttachmentType;
 import net.minecraft.text.MutableText;
 import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
+import net.minecraft.util.math.Vec3d;
 import org.jetbrains.annotations.Nullable;
 import org.joml.Matrix4f;
 import org.slf4j.Logger;
@@ -94,36 +96,39 @@ public class IveSpoken implements ClientModInitializer {
 					   .setStyle(content.getStyle().withColor(Formatting.GRAY));
 	}
 
-	public static void renderDialog(AbstractClientPlayerEntity player, MatrixStack matrixStack, VertexConsumerProvider vertexConsumers, int light) {
+	public static void renderDialog(AbstractClientPlayerEntity player, MatrixStack matrixStack, VertexConsumerProvider vertexConsumers, int light, float tickDelta) {
 		@Nullable Text dialog = dialog(player.getUuid());
 		if (dialog == null) return;
 
 		boolean sneaky = !player.isSneaky();
-		int y = (player.getName().getString().equals("deadmau5") ? -10 : 0) - 10;
+		Vec3d pos = player.getAttachments().getPointNullable(EntityAttachmentType.NAME_TAG, 0, player.getYaw(tickDelta));
+		if (pos != null) {
+			int y = (player.getName().getString().equals("deadmau5") ? -10 : 0) - 10;
 
-		matrixStack.push();
-		matrixStack.translate(0, player.getNameLabelHeight(), 0);
-		matrixStack.multiply(MinecraftClient.getInstance().getEntityRenderDispatcher().getRotation());
-		matrixStack.scale(-0.025F, -0.025F, 0.025F);
-		Matrix4f matrix4f = matrixStack.peek().getPositionMatrix();
+			matrixStack.push();
+			matrixStack.translate(0, pos.getY() + 0.5, 0);
+			matrixStack.multiply(MinecraftClient.getInstance().getEntityRenderDispatcher().getRotation());
+			matrixStack.scale(-0.025F, -0.025F, 0.025F);
+			Matrix4f matrix4f = matrixStack.peek().getPositionMatrix();
 
-		int backgroundColor = (int) (MinecraftClient.getInstance().options.getTextBackgroundOpacity(0.25F) * 255.0F) << 24;
-		float x = (float) -MinecraftClient.getInstance().textRenderer.getWidth(dialog) / 2;
+			int backgroundColor = (int) (MinecraftClient.getInstance().options.getTextBackgroundOpacity(0.25F) * 255.0F) << 24;
+			float x = (float) -MinecraftClient.getInstance().textRenderer.getWidth(dialog) / 2;
 
-		MinecraftClient.getInstance().textRenderer.draw(
-				dialog, x, y, 0x20FFFFFF, false, matrix4f, vertexConsumers,
-				sneaky ? TextRenderer.TextLayerType.SEE_THROUGH : TextRenderer.TextLayerType.NORMAL,
-				backgroundColor, light
-		);
-
-		if (sneaky) {
 			MinecraftClient.getInstance().textRenderer.draw(
-					dialog, x, y, 0xFFFFFFFF, false, matrix4f, vertexConsumers,
-					TextRenderer.TextLayerType.NORMAL,
-					0, light
+					dialog, x, y, 0x20FFFFFF, false, matrix4f, vertexConsumers,
+					sneaky ? TextRenderer.TextLayerType.SEE_THROUGH : TextRenderer.TextLayerType.NORMAL,
+					backgroundColor, light
 			);
-		}
 
-		matrixStack.pop();
+			if (sneaky) {
+				MinecraftClient.getInstance().textRenderer.draw(
+						dialog, x, y, 0xFFFFFFFF, false, matrix4f, vertexConsumers,
+						TextRenderer.TextLayerType.NORMAL,
+						0, light
+				);
+			}
+
+			matrixStack.pop();
+		}
 	}
 }

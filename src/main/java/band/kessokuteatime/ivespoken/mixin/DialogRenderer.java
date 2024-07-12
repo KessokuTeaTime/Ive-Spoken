@@ -20,13 +20,19 @@ public abstract class DialogRenderer extends EntityRenderer<Entity> {
 		super(ctx);
 	}
 
-	@Inject(method = "renderLabelIfPresent*", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/util/math/MatrixStack;pop()V"))
-	private void renderDialog(AbstractClientPlayerEntity player, Text text, MatrixStack matrixStack, VertexConsumerProvider vertexConsumers, int light, CallbackInfo ci) {
+	@Inject(
+			method = "renderLabelIfPresent*",
+			at = @At(
+					value = "INVOKE",
+					target = "Lnet/minecraft/client/util/math/MatrixStack;pop()V"
+			)
+	)
+	private void renderDialog(AbstractClientPlayerEntity player, Text text, MatrixStack matrixStack, VertexConsumerProvider vertexConsumers, int light, float tickDelta, CallbackInfo ci) {
 		if (!IveSpoken.CONFIG.get().enabled) return;
 
 		double distance = this.dispatcher.getSquaredDistanceToCamera(player);
 		if (distance > 4096) return;
 
-		IveSpoken.renderDialog(player, matrixStack, vertexConsumers, light);
+		IveSpoken.renderDialog(player, matrixStack, vertexConsumers, light, tickDelta);
 	}
 }
