@@ -1,7 +1,7 @@
 [versions]
 maven-group = "band.kessokuteatime"
 archives-name = "ivespoken"
-mod = "2.2.0"
+mod = "2.2.1"
 loader = "fabric"
 
 minecraft = "1.20"
@@ -13,7 +13,7 @@ modpublisher = "2.1.0"
 
 cloth-config = "11.1.118"
 modmenu = "7.0.1"
-night-auto-config = "1.0.3-fabric1.20"
+night-auto-config = "1.0.4-fabric1.20"
 
 # id
 id-modrinth = "OidSa416"

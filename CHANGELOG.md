@@ -1,4 +1,3 @@
-### Maintenance Update
+### Fixes
 
-- **Supported** `1.21+`.
-- **Updated** to use builtin rendering method.
+- **Updated** to **Night Auto Config** `1.0.4`.
