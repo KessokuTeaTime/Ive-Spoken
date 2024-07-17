@@ -3,7 +3,7 @@
   "id": "ivespoken",
   "version": "${version}",
 
-  "name": "${display.name}",
+  "name": "${display.name.get()}",
   "description": "Displays RPG-like dialogs above players' names. I've spoken.",
   "authors": [
     "Kessoku Tea Time",
