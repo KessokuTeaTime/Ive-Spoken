@@ -24,7 +24,7 @@
       "band.kessokuteatime.ivespoken.IveSpoken"
     ],
     "modmenu": [
-      "band.kessokuteatime.ivespoken.config.IveSpokenModMenuIntegration"
+      "band.kessokuteatime.ivespoken.config.modmenu.IveSpokenModMenuIntegration"
     ]
   },
   "mixins": [
