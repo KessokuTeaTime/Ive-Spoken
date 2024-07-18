@@ -1,5 +1,6 @@
-package band.kessokuteatime.ivespoken.config;
+package band.kessokuteatime.ivespoken.config.modmenu;
 
+import band.kessokuteatime.ivespoken.config.IveSpokenConfig;
 import com.terraformersmc.modmenu.api.ConfigScreenFactory;
 import com.terraformersmc.modmenu.api.ModMenuApi;
 import me.shedaniel.autoconfig.AutoConfig;
