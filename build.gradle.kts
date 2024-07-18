@@ -28,7 +28,6 @@ dependencies {
 	mappings(libs.yarn)
 	modImplementation(libs.bundles.fabric)
 
-	modApi(libs.cloth.config)
 	modApi(libs.modmenu)
 	modApi(libs.night.auto.config)
 }
