@@ -1,40 +1,43 @@
 [versions]
 maven-group = "band.kessokuteatime"
 archives-name = "ivespoken"
-mod = "2.2.2"
-loader = "fabric"
+mod = "2.2.3"
 
-minecraft = "1.21"
-yarn = "1.21+build.9"
-fabric-loader = "0.16.0"
-fabric-api = "0.100.6+1.21"
-fabric-loom = "1.6-SNAPSHOT"
-modpublisher = "2.1.0"
+minecraft = "26.2"
+java = "25"
 
-modmenu = "11.0.1"
-night-auto-config = "1.0.6-fabric.1.21"
+architectury-plugin = "3.5.169"
+architectury-loom = "1.17.491"
+shadow = "9.6.0"
+modpublisher = "2.2.1"
 
-# id
+fabric-loader = "0.19.3"
+fabric-minecraft-range = "~26.2"
+javafml = "3"
+neoforge = "26.2.0.25-beta"
+neoforge-range = "[26.2.0.25-beta,)"
+neoforge-minecraft-range = "[26.2,26.3)"
+
+cloth-config = "26.2.155"
+modmenu = "20.0.1"
+
 id-modrinth = "OidSa416"
 id-curseforge = "998412"
 
-# display
 display-name = "I've Spoken"
-display-loader = "Fabric"
-display-version = "1.21+"
 
 [libraries]
 minecraft = { group = "com.mojang", name = "minecraft", version.ref = "minecraft" }
-yarn = { group = "net.fabricmc", name = "yarn", version.ref = "yarn" }
 fabric-loader = { group = "net.fabricmc", name = "fabric-loader", version.ref = "fabric-loader" }
-fabric-api = { group = "net.fabricmc.fabric-api", name = "fabric-api", version.ref = "fabric-api" }
+neoforge = { group = "net.neoforged", name = "neoforge", version.ref = "neoforge" }
 
+cloth-config = { group = "me.shedaniel.cloth", name = "cloth-config", version.ref = "cloth-config" }
+cloth-config-fabric = { group = "me.shedaniel.cloth", name = "cloth-config-fabric", version.ref = "cloth-config" }
+cloth-config-neoforge = { group = "me.shedaniel.cloth", name = "cloth-config-neoforge", version.ref = "cloth-config" }
 modmenu = { group = "com.terraformersmc", name = "modmenu", version.ref = "modmenu" }
-night-auto-config = { group = "com.github.KessokuTeaTime", name = "Night-Auto-Config", version.ref = "night-auto-config" }
 
 [plugins]
-fabric-loom = { id = "fabric-loom", version.ref = "fabric-loom" }
+architectury = { id = "architectury-plugin", version.ref = "architectury-plugin" }
+architectury-loom = { id = "dev.architectury.loom-no-remap", version.ref = "architectury-loom" }
+shadow = { id = "com.gradleup.shadow", version.ref = "shadow" }
 modpublisher = { id = "com.hypherionmc.modutils.modpublisher", version.ref = "modpublisher" }
-
-[bundles]
-fabric = ["fabric-loader", "fabric-api"]

@@ -2,17 +2,15 @@
 
 # I've Spoken
 
-**I've Spoken** pops an RPG-like dialog on top of one's name when he or she speaks, and lasts for about 5 seconds before vanishing (configurable).
-
-It's just something like this:
+**I've Spoken** displays an RPG-like dialog above a player's name when they send a chat message. Dialogs disappear after five seconds by default, and long messages are truncated to the configured width.
 
 ![I've spoken.](https://github.com/KessokuTeaTime/Ive-Spoken/blob/artwork/content/spoken.png)
 
-The content will be truncated if too long (configurable).
+The mod is client-side and supports **Fabric** and **NeoForge** on **Minecraft 26.2**. **[Cloth Config API](https://modrinth.com/mod/cloth-config)** is required.
 
 ## Configuration
 
-You can now configure **I've Spoken** by editing the configuration file at `/config/ivespoken.toml`. With **[Mod Menu](https://modrinth.com/mod/modmenu)** installed, you can also configure this mod through an in-game GUI.
+Settings are stored in `config/ivespoken.toml`. The configuration screen is available through **[Mod Menu](https://modrinth.com/mod/modmenu)** on Fabric and the Mods screen on NeoForge.
 
 ## License
 

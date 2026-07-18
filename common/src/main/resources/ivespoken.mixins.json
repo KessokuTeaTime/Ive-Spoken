@@ -1,0 +1,14 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "band.kessokuteatime.ivespoken.mixin",
+  "compatibilityLevel": "JAVA_25",
+  "client": [
+    "AvatarRenderStateMixin",
+    "ChatTracker",
+    "DialogRenderer"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

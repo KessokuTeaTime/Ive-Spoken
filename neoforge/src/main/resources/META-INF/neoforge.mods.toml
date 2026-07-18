@@ -1,0 +1,40 @@
+modLoader = "javafml"
+loaderVersion = "${javaFmlVersionRange}"
+license = "GPL-3.0-only"
+issueTrackerURL = "https://github.com/KessokuTeaTime/Ive-Spoken/issues"
+
+[[mods]]
+modId = "ivespoken"
+version = "${version}"
+displayName = "${displayName}"
+displayURL = "https://modrinth.com/mod/ive-spoken"
+logoFile = "assets/ivespoken/icon.png"
+authors = "Kessoku Tea Time, KrLite"
+description = "Displays RPG-like dialogs above players' names. I've spoken."
+
+[features.ivespoken]
+javaVersion = "[${javaVersion},)"
+
+[[dependencies.ivespoken]]
+modId = "neoforge"
+type = "required"
+versionRange = "${neoforgeVersionRange}"
+ordering = "NONE"
+side = "CLIENT"
+
+[[dependencies.ivespoken]]
+modId = "minecraft"
+type = "required"
+versionRange = "${neoforgeMinecraftVersionRange}"
+ordering = "NONE"
+side = "CLIENT"
+
+[[dependencies.ivespoken]]
+modId = "cloth_config"
+type = "required"
+versionRange = "[${clothConfigVersion},)"
+ordering = "NONE"
+side = "CLIENT"
+
+[[mixins]]
+config = "ivespoken.mixins.json"
