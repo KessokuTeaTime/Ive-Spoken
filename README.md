@@ -6,7 +6,7 @@
 
 ![I've spoken.](https://github.com/KessokuTeaTime/Ive-Spoken/blob/artwork/content/spoken.png)
 
-The mod is client-side and supports **Fabric** and **NeoForge** on **Minecraft 26.2**. **[Cloth Config API](https://modrinth.com/mod/cloth-config)** is required.
+The mod is client-side and supports **Fabric** and **NeoForge** on **Minecraft 26.1 through 26.1.2**. **[Cloth Config API](https://modrinth.com/mod/cloth-config)** is required.
 
 ## Configuration
 

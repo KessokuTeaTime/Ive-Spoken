@@ -58,6 +58,7 @@ public abstract class DialogRenderer {
 				dialog,
 				!state.isDiscrete,
 				state.lightCoords,
+				state.distanceToCameraSq,
 				cameraState
 		);
 		poseStack.popPose();

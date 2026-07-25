@@ -7,7 +7,7 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.HoverEvent;
 import net.minecraft.network.chat.MessageSignature;
 import net.minecraft.network.chat.contents.TranslatableContents;
-import net.minecraft.world.entity.EntityTypes;
+import net.minecraft.world.entity.EntityType;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -54,7 +54,7 @@ public abstract class ChatTracker {
 	private static UUID findPlayerId(Component component) {
 		for (Component part : component.toFlatList()) {
 			if (part.getStyle().getHoverEvent() instanceof HoverEvent.ShowEntity showEntity
-					&& showEntity.entity().type == EntityTypes.PLAYER) {
+					&& showEntity.entity().type == EntityType.PLAYER) {
 				return showEntity.entity().uuid;
 			}
 		}
